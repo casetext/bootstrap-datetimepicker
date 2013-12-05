@@ -70,7 +70,9 @@
                 throw new Error('Must choose at least one picker');
 
             picker.id = dpgId++;
-            pMoment.lang(picker.options.language);
+            if (pMoment.lang) {
+            	pMoment.lang(picker.options.language);
+            }
             picker.date = pMoment();
             picker.element = $(element);
             picker.unset = false;
